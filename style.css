@@ -3,18 +3,22 @@
 }
 
 .container {
+    max-width: 800px;
     background-color: pink;
-    border: 2px solid black;
+    border: 4px solid rgba(134, 15, 15, 0.2);
+    border-radius: 8px;
+
     text-align: center;
-    margin: 0;
-    padding: 0;
+    margin: 300px auto;
+    padding: 20px 8px;
+    line-height: 2.5em;
 }
 
 button {
     border: none;
     border-radius: 8px;
     padding: 12px 26px;
-    margin: 10px 20px;
+    margin: 20px 20px;
     font-size: 24px;
     background-color: rgb(255, 118, 118);
     color: rgb(255, 255, 255);
@@ -29,4 +33,9 @@ button:hover {
 button:active {
     background-color: rgba(248, 133, 133, 0.6);
     transition: 0.15s;
+}
+
+span {
+    color:rgb(134, 15, 15);
+    margin: 0 6px;
 }
