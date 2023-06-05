@@ -8,6 +8,9 @@ const userText = document.getElementById('user-choice');
 const resultText = document.getElementById('result');
 const choiceBtns = document.querySelectorAll('button');
 
+const userScoreText = document.getElementById('user-scorecard');
+const compScoreText = document.getElementById('comp-scorecard');
+
 let user
 let computer
 let result
@@ -40,8 +43,11 @@ function computerTurn() {
     computerText.innerHTML = computer;
 };
 
-// Function to check result
+// Function to check result and update scorecard
 function checkResult() {
+    let userScore = 0;
+    let compScore = 0;
+
     if (user == computer) {
         result = "Draw!";
     }
@@ -56,6 +62,15 @@ function checkResult() {
     }
 
     resultText.textContent = result;
+
+    if (result == "You Win!") {
+        userScore += 1;
+    } else if (result == 'You Lose!') {
+        compScore += 1;
+    }
+
+    userScoreText.textContent = userScore;
+    compScoreText.textContent = compScore;
 
     return;
 };
