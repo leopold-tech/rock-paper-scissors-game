@@ -1,7 +1,3 @@
-// const rockBtn = document.querySelector('#rock');
-// const paperBtn = document.querySelector('#paper');
-// const scissorsBtn = document.querySelector('#scissors');
-
 // Accessing elements in JS
 const computerText = document.getElementById('computer-choice');
 const userText = document.getElementById('user-choice');
@@ -15,13 +11,16 @@ let user
 let computer
 let result
 
+let userScore = 0;
+let compScore = 0;
+
 // Using For..Each loop to add EventListener to all 3 buttons
 // This works as all 3 buttons have similar functionality. Otherwise, can use classes
 choiceBtns.forEach(button => button.addEventListener('click', (e) => {
     user = e.target.innerHTML
     userText.innerHTML = user
     computerTurn()
-    setInterval(checkResult, 400);
+    setTimeout(checkResult, 400); //setInterval and setTimeout are different
 }));
 
 // Function using math.random to get computer turn
@@ -43,49 +42,41 @@ function computerTurn() {
     computerText.innerHTML = computer;
 };
 
-// Function to check result and update scorecard
+// Function to check result
 function checkResult() {
-    let userScore = 0;
-    let compScore = 0;
-
-    if (user == computer) {
-        result = "Draw!";
-    }
-    else if (computer == 'Rock') {
+    if (computer === 'Rock') {
         result = (user == 'Paper') ? "You Win!" : "You Lose!";
+        resultText.textContent = result;
     }
-    else if (computer == 'Paper') {
+    else if (computer === 'Paper') {
         result = (user == 'Scissors') ? "You Win!" : "You Lose!";
+        resultText.textContent = result;
+
     }
-    else if (computer == 'Scissors') {
+    else if (computer === 'Scissors') {
         result = (user == 'Rock') ? "You Win!" : "You Lose!";
+        resultText.textContent = result;
+
+    } else {
+        result = "Draw!";
+        resultText.textContent = result;
     }
+    console.log(result);
+    scoreCard(result);
+    return;
+}   
 
-    resultText.textContent = result;
-
+// Function to update scorecard
+function scoreCard(result) {
     if (result == "You Win!") {
         userScore += 1;
+        console.log(userScore);
+        userScoreText.textContent = userScore;
+
     } else if (result == 'You Lose!') {
         compScore += 1;
+        console.log(compScore);
+        compScoreText.textContent = compScore;
     }
-
-    userScoreText.textContent = userScore;
-    compScoreText.textContent = compScore;
-
-    return;
-};
-
-// function checkResult() {
-//     if (user == computer) {
-//         return "Draw!";
-//     }
-//     else if (computer == 'Rock') {
-//         return result = (user == 'Paper') ? "You Win!" : "You Lose!";
-//     }
-//     else if (computer == 'Paper') {
-//         return result = (user == 'Scissors') ? "You Win!" : "You Lose!";
-//     }
-//     else if (computer == 'Scissors') {
-//         return result = (user == 'Rock') ? "You Win!" : "You Lose!";
-//     }
-// };
+return
+}
