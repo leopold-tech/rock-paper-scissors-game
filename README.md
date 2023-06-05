@@ -1,2 +1,5 @@
-# rock-paper-scissors-game
-A simple Rock Paper Scissors game made using HTML, CSS and JavaScript.
+# Rock-Paper-Scissors Game
+> A simple Rock Paper Scissors game made using HTML, CSS and JavaScript.
+
+### Features:
+- Realistic time gap between user pressing button and result calculation
