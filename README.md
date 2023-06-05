@@ -3,3 +3,4 @@
 
 ### Features:
 - Realistic time gap between user pressing button and result calculation
+- Basic scorecard
