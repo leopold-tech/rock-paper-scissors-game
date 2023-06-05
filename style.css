@@ -1,6 +1,5 @@
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(149, 149, 149);
 }
 
 .container {
@@ -13,6 +12,25 @@
     margin: 300px auto;
     padding: 20px 8px;
     line-height: 2.5em;
+}
+
+.scorecard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 400px;
+    margin: 30px auto;
+    background-color: rgba(255, 118, 118, 0.6);
+    border: none;
+    border-radius: 8px;
+}
+
+.scorecard h4 {
+    margin: 12px auto;
+    padding: 0;
+    font-size: 24px;
+    color: #fff;
 }
 
 button {
@@ -37,6 +55,8 @@ button:active {
 }
 
 span {
-    color:rgb(134, 15, 15);
+    color: rgb(190, 44, 44);
     margin: 0 6px;
+    padding: 0;
+    font-size: 24px;
 }
