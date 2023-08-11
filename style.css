@@ -3,6 +3,10 @@
     background-color: rgb(149, 149, 149);
 }
 
+body {
+    max-height: 100vh;
+}
+
 .container {
     background-color: #ccc;
     border: 2px solid black;
